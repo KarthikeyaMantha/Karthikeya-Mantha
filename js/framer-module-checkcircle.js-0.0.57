@@ -1,0 +1,8 @@
+/*
+ * CheckCircle (phosphor-icons/CheckCircle@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/checkcircle.js"
+export { default } from "../js/checkcircle.js"

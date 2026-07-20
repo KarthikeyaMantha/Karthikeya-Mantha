@@ -1,0 +1,8 @@
+/*
+ * ScanSmiley (phosphor-icons/ScanSmiley@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/scansmiley.js"
+export { default } from "../js/scansmiley.js"
