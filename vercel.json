@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/works", "destination": "/works.html" },
+    { "source": "/works/echowear", "destination": "/works/echowear.html" },
+    { "source": "/works/horizon-atlas", "destination": "/works/horizon-atlas.html" },
+    { "source": "/works/lumex", "destination": "/works/lumex.html" },
+    { "source": "/works/neurosync", "destination": "/works/neurosync.html" },
+    { "source": "/works/planza", "destination": "/works/planza.html" },
+    { "source": "/works/pulma", "destination": "/works/pulma.html" }
+  ]
+}
