@@ -152,5 +152,630 @@
 	<!-- Start of bodyEnd -->
     
     <!-- End of bodyEnd -->
-</body>
+
+
+
+
+
+\n
+
+\n
+
+\n
+
+\n
+<!-- Certifications Modal -->
+<div id="certifications-modal" class="cert-modal">
+    <div class="cert-modal-overlay"></div>
+    <div class="cert-modal-container">
+        <div class="cert-modal-header">
+            <h3>Globally Certified Strategist - Credentials</h3>
+            <button class="cert-modal-close" aria-label="Close modal">&times;</button>
+        </div>
+        <div class="cert-modal-tabs">
+            <button class="cert-tab-btn active" data-index="0">Google AI Prompting</button>
+            <button class="cert-tab-btn" data-index="1">Illinois AI Topics</button>
+            <button class="cert-tab-btn" data-index="2">HubSpot Digital Marketing</button>
+            <button class="cert-tab-btn" data-index="3">Yale Financial Markets</button>
+        </div>
+        <div class="cert-modal-body">
+            <!-- Google Prompting -->
+            <div class="cert-slide active" data-index="0">
+                <div class="cert-image-wrapper">
+                    <img src="/images/Prompting%20essentials%20KM%20-%20google.jpg" alt="Google Prompting Essentials Certification">
+                </div>
+                <div class="cert-actions">
+                    <a href="/images/Prompting%20essentials%20KM%20-%20google.jpg" target="_blank" class="cert-btn">Open in New Tab</a>
+                </div>
+            </div>
+            <!-- Illinois AI -->
+            <div class="cert-slide" data-index="1">
+                <div class="cert-image-wrapper">
+                    <img src="/images/Adv%20topics%20in%20AI%20KM%20-%20illinois%20Uni.jpg" alt="Advanced Topics in Artificial Intelligence Certification">
+                </div>
+                <div class="cert-actions">
+                    <a href="/images/Adv%20topics%20in%20AI%20KM%20-%20illinois%20Uni.jpg" target="_blank" class="cert-btn">Open in New Tab</a>
+                </div>
+            </div>
+            <!-- HubSpot -->
+            <div class="cert-slide" data-index="2">
+                <div class="cert-image-wrapper">
+                    <img src="/images/Digital%20Marketing%20KM%20-%20hubspot.jpg" alt="HubSpot Digital Marketing Certification">
+                </div>
+                <div class="cert-actions">
+                    <a href="/images/Digital%20Marketing%20KM%20-%20hubspot.jpg" target="_blank" class="cert-btn">Open in New Tab</a>
+                </div>
+            </div>
+            <!-- Yale Image (Replaces PDF) -->
+            <div class="cert-slide" data-index="3">
+                <div class="cert-image-wrapper">
+                    <img src="/images/Financial_Markets_yale.jpg" alt="Yale Financial Markets Certification">
+                </div>
+                <div class="cert-actions">
+                    <a href="/images/Financial_Markets_yale.jpg" target="_blank" class="cert-btn">Open in New Tab</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Modal CSS styles with matched typography */
+.cert-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-font-smoothing: antialiased;
+    pointer-events: none;
+    visibility: hidden;
+    transition: visibility 0s 0.3s;
+}
+
+.cert-modal.active {
+    pointer-events: auto;
+    visibility: visible;
+    transition: visibility 0s 0s;
+}
+
+.cert-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cert-modal.active .cert-modal-overlay {
+    opacity: 1;
+}
+
+.cert-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    max-height: 85vh;
+    z-index: 2;
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cert-modal.active .cert-modal-container {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.cert-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cert-modal-header h3 {
+    margin: 0;
+    font-family: "Instrument Sans", "Inter", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--token-2b90e070-5307-4bc4-9726-a1d7f0bc8735, #1f1f1f);
+    letter-spacing: -0.02em;
+}
+
+.cert-modal-close {
+    background: none;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 2.2rem;
+    line-height: 1;
+    color: #888888;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.cert-modal-close:hover {
+    color: #111111;
+    transform: scale(1.1);
+}
+
+.cert-modal-tabs {
+    display: flex;
+    background-color: #f7f8f9;
+    padding: 6px;
+    border-bottom: 1px solid #eeeeee;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.cert-modal-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.cert-tab-btn {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    font-family: "Inter", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #666666;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.cert-tab-btn:hover {
+    color: #111111;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.cert-tab-btn.active {
+    color: var(--token-404da5a0-b6b9-407a-b3f1-b45132783493, #111111);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cert-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+}
+
+.cert-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: certFadeIn 0.3s ease;
+}
+
+.cert-slide.active {
+    display: flex;
+}
+
+.cert-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eeeeee;
+    max-height: 52vh;
+}
+
+.cert-image-wrapper img {
+    max-width: 100%;
+    max-height: 52vh;
+    object-fit: contain;
+    display: block;
+}
+
+.cert-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cert-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    background-color: var(--token-404da5a0-b6b9-407a-b3f1-b45132783493, #111111);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    letter-spacing: -0.01em;
+}
+
+.cert-btn:hover {
+    background-color: #222222;
+    transform: translateY(-1px);
+}
+
+/* Card Mockup Styles (Replaces the blurry card image) */
+.cert-overview-mockup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 5;
+    border-radius: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cert-mockup-title {
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #64748b;
+    text-align: left;
+}
+
+.cert-mockup-cards {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cert-mockup-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #ffffff;
+    padding: 12px 16px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    width: 88%;
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    box-sizing: border-box;
+}
+
+.cert-card-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.cert-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+    display: block;
+}
+
+.cert-card-text {
+    text-align: left;
+    overflow: hidden;
+}
+
+.cert-card-org {
+    font-family: "Inter", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.cert-card-name {
+    font-family: "Inter", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--token-2b90e070-5307-4bc4-9726-a1d7f0bc8735, #1f1f1f);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.01em;
+}
+
+/* Overlap layout of stacked mockup cards */
+.cert-card-google {
+    transform: translateY(-38px) rotate(-4deg) scale(0.96);
+    z-index: 10;
+}
+
+.cert-card-yale {
+    transform: translateY(4px) rotate(2deg) scale(1);
+    z-index: 20;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+}
+
+.cert-card-illinois {
+    transform: translateY(46px) rotate(-1deg) scale(0.96);
+    z-index: 15;
+}
+
+/* Hover spreading expansions */
+[data-has-cert-listener="true"]:hover, .cert-overview-mockup:hover .cert-card-google {
+    transform: translateY(-62px) rotate(-7deg) scale(0.97);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06);
+}
+
+[data-has-cert-listener="true"]:hover, .cert-overview-mockup:hover .cert-card-yale {
+    transform: translateY(0px) rotate(0deg) scale(1.03);
+    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+[data-has-cert-listener="true"]:hover, .cert-overview-mockup:hover .cert-card-illinois {
+    transform: translateY(62px) rotate(4deg) scale(0.97);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06);
+}
+
+.cert-mockup-footer {
+    font-family: "Inter", sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    letter-spacing: -0.01em;
+}
+
+[data-has-cert-listener="true"]:hover, .cert-overview-mockup:hover .cert-mockup-footer {
+    color: #0f172a;
+    transform: translateX(4px);
+}
+
+@keyframes certFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+    .cert-modal-container {
+        width: 95%;
+        max-height: 90vh;
+        border-radius: 20px;
+    }
+    
+    .cert-modal-header {
+        padding: 16px 20px;
+    }
+    
+    .cert-modal-tabs {
+        padding: 4px;
+    }
+    
+    .cert-tab-btn {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+        flex: 0 0 auto;
+    }
+    
+    .cert-modal-body {
+        padding: 16px;
+    }
+    
+    .cert-image-wrapper {
+        max-height: 46vh;
+    }
+    
+    .cert-image-wrapper img {
+        max-height: 46vh;
+    }
+}
+</style>
+
+<script>
+// Intercepting click, replacing image, and dynamically replacing sub-headline text
+(function() {
+    function setupCertifications() {
+        // 1. Swapping description sub-headline text dynamically (handles browser caching)
+        const allTextElements = document.querySelectorAll('.framer-16uh9sr, p, div');
+        allTextElements.forEach(el => {
+            if (el.textContent && el.textContent.includes("Advanced credentials in AI, Strategy, and Financial Markets")) {
+                if (el.children.length === 0 || (el.children.length === 1 && el.children[0].tagName === 'BR')) {
+                    el.textContent = "Advanced credentials across key sectors, including AI, Business Strategy, Finance, and more.";
+                } else {
+                    for (let i = 0; i < el.childNodes.length; i++) {
+                        let node = el.childNodes[i];
+                        if (node.nodeType === 3 && node.textContent.includes("Advanced credentials in AI")) {
+                            node.textContent = "Advanced credentials across key sectors, including AI, Business Strategy, Finance, and more.";
+                        }
+                    }
+                }
+            }
+        });
+
+        // 2. Intercepting links and injecting vector mockup
+        const links = document.querySelectorAll('a[href*="planza.framer.website"]');
+        links.forEach(link => {
+            let isStrategist = false;
+            let parent = link.parentElement;
+            while (parent) {
+                if (parent.textContent && parent.textContent.includes("Globally Certified Strategist")) {
+                    isStrategist = true;
+                    break;
+                }
+                parent = parent.parentElement;
+            }
+            
+            if (isStrategist) {
+                // Prevent redirection
+                if (link.hasAttribute('href')) {
+                    link.removeAttribute('href');
+                    link.style.cursor = 'pointer';
+                }
+                
+                // Add click listener
+                if (!link.dataset.hasCertListener) {
+                    link.dataset.hasCertListener = "true";
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openCertificationsModal();
+                    });
+                }
+                
+                // Hide standard images
+                const img = link.querySelector('img');
+                if (img && img.style.display !== 'none') {
+                    img.style.display = 'none';
+                }
+                const bgWrapper = link.querySelector('[data-framer-background-image-wrapper]');
+                if (bgWrapper && bgWrapper.style.display !== 'none') {
+                    bgWrapper.style.display = 'none';
+                }
+                
+                // Append our custom vector overview cards mockup using Unsplash images
+                let mockup = link.querySelector('.cert-overview-mockup');
+                if (!mockup) {
+                    mockup = document.createElement('div');
+                    mockup.className = 'cert-overview-mockup';
+                    mockup.innerHTML = `
+                        <div class="cert-mockup-title">Credential Portfolio</div>
+                        <div class="cert-mockup-cards">
+                            <div class="cert-mockup-card cert-card-google">
+                                <div class="cert-card-logo">
+                                    <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&w=80&h=80&q=80" alt="Google" class="cert-logo-img">
+                                </div>
+                                <div class="cert-card-text">
+                                    <div class="cert-card-org">Google</div>
+                                    <div class="cert-card-name">AI Prompting</div>
+                                </div>
+                            </div>
+                            <div class="cert-mockup-card cert-card-yale">
+                                <div class="cert-card-logo">
+                                    <img src="https://images.unsplash.com/photo-1607237138185-eedd996e5b00?auto=format&fit=crop&w=80&h=80&q=80" alt="Yale" class="cert-logo-img">
+                                </div>
+                                <div class="cert-card-text">
+                                    <div class="cert-card-org">Yale University</div>
+                                    <div class="cert-card-name">Financial Markets</div>
+                                </div>
+                            </div>
+                            <div class="cert-mockup-card cert-card-illinois">
+                                <div class="cert-card-logo">
+                                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=80&h=80&q=80" alt="UIUC" class="cert-logo-img">
+                                </div>
+                                <div class="cert-card-text">
+                                    <div class="cert-card-org">Illinois (UIUC)</div>
+                                    <div class="cert-card-name">Advanced AI</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-mockup-footer">Click to View Certifications &rarr;</div>
+                    `;
+                    link.appendChild(mockup);
+                }
+            }
+        });
+    }
+
+    window.openCertificationsModal = function() {
+        const modal = document.getElementById('certifications-modal');
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeCertificationsModal = function() {
+        const modal = document.getElementById('certifications-modal');
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        }
+    };
+
+    setInterval(setupCertifications, 500);
+    setupCertifications();
+})();
+
+// Tabs click listeners
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.cert-tab-btn');
+    const slides = document.querySelectorAll('.cert-slide');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const index = tab.getAttribute('data-index');
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            slides.forEach(s => s.classList.remove('active'));
+            const activeSlide = document.querySelector(`.cert-slide[data-index="${index}"]`);
+            if (activeSlide) {
+                activeSlide.classList.add('active');
+            }
+        });
+    });
+    
+    const closeBtn = document.querySelector('.cert-modal-close');
+    const overlay = document.querySelector('.cert-modal-overlay');
+    if (closeBtn) closeBtn.addEventListener('click', window.closeCertificationsModal);
+    if (overlay) overlay.addEventListener('click', window.closeCertificationsModal);
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            window.closeCertificationsModal();
+        }
+    });
+});
+</script>
+\n</body>
 </html>
