@@ -133,14 +133,89 @@
     
     <!-- End of headEnd -->
 	
-<style>
-        .framer-5z4t0k-container, #__framer-badge-container {
-            display: none !important;
-            visibility: hidden !important;
-            opacity: 0 !important;
-            pointer-events: none !important;
-        }
-    </style>
+<!-- Custom Layout & Component Overrides -->
+	<style>
+		/* 1. Hide Framer brand badges */
+		.framer-5z4t0k-container, #__framer-badge-container {
+			display: none !important;
+			visibility: hidden !important;
+			opacity: 0 !important;
+			pointer-events: none !important;
+		}
+
+		/* 2. Fix: Allow popup/hover cards to fully expand without being clipped */
+		/* The Framer main wrapper uses overflow:var(--h4z1r9) which defaults to hidden */
+		.framer-NCYvg.framer-72hmp {
+			--h4z1r9: visible !important;
+			overflow: visible !important;
+		}
+		/* Hero section containers - must be visible so popup floats above */
+		.framer-pP5Z0.framer-72rtr7,
+		.framer-pP5Z0 .framer-4b579f,
+		.framer-pP5Z0 .framer-1l6sd56,
+		.framer-pP5Z0 .framer-mi1ayt,
+		.framer-pP5Z0 .framer-1974u4 {
+			overflow: visible !important;
+		}
+		/* The About page hero section popup fix */
+		.framer-KhHHA .framer-12kufte,
+		.framer-KhHHA .framer-1yip7px {
+			overflow: visible !important;
+		}
+		/* Spacing and border-radius overrides for hover popup card rows */
+		.framer-oEH5A.framer-1hs4vxi {
+			gap: 12px !important;
+			justify-content: center !important;
+		}
+		.framer-oEH5A.framer-1hs4vxi .framer-110g1to,
+		.framer-oEH5A.framer-1hs4vxi .framer-7trp33,
+		.framer-oEH5A.framer-1hs4vxi .framer-1w3pwdg {
+			position: relative !important;
+			top: unset !important;
+			bottom: unset !important;
+			left: unset !important;
+			right: unset !important;
+			transform: none !important;
+			border-radius: 9999px !important; /* Make them fully rounded pills */
+			box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05) !important;
+			margin: 0 auto !important; /* Center horizontally */
+			width: 291px !important; /* Maintain original width */
+		}
+	</style>
+
+	<style id="services-cards-alignment">
+		/* 3. Equal-height stretch and alignment of services cards */
+		.framer-1gw5xx1 {
+			align-items: stretch !important;
+		}
+		.framer-crt3c7-container,
+		.framer-4iinzi-container,
+		.framer-4j3x2b-container {
+			margin-top: 0 !important;
+			transform: none !important;
+			display: flex !important;
+			flex-direction: column !important;
+		}
+		.framer-crt3c7-container > div,
+		.framer-4iinzi-container > div,
+		.framer-4j3x2b-container > div {
+			height: 100% !important;
+			display: flex !important;
+			flex-direction: column !important;
+		}
+		.framer-5rx2c1 {
+			flex: 1 1 auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: space-between !important;
+		}
+		.framer-1vfteq9 {
+			flex: 1 1 auto !important;
+			display: flex !important;
+			flex-direction: column !important;
+			justify-content: space-between !important;
+		}
+	</style>
 </head>
 <body>
 	
