@@ -29,8 +29,8 @@
     function injectPortfolioDisclaimer() {
         const disclaimerText = "Disclaimer: This portfolio contains speculative and conceptual projects designed to showcase my marketing and creative capabilities. Any brand names, logos, or registered trademarks featured within these mockups remain the exclusive property of their respective copyright holders. The use of these assets does not imply any affiliation, sponsorship, or endorsement by the brands represented. These materials are not for commercial sale and are displayed strictly for professional review.";
         
-        // 1. Case study pages: find the "More works" container at the bottom
-        const moreContainer = document.querySelector('.framer-1r6i6tl') || document.querySelector('.framer-upnkc5');
+        // Target individual case study pages at the bottom of the "More works" container
+        const moreContainer = document.querySelector('.framer-1r6i6tl');
         if (moreContainer) {
             if (!moreContainer.querySelector('.portfolio-legal-disclaimer')) {
                 const d = document.createElement('div');
@@ -39,17 +39,6 @@
                 d.textContent = disclaimerText;
                 moreContainer.appendChild(d);
             }
-            return;
-        }
-
-        // 2. Global footer on other pages:
-        const footerTarget = document.querySelector('.framer-diwa70, .framer-b3zm0j, [data-framer-name="Works"], main');
-        if (footerTarget && !document.querySelector('.portfolio-legal-disclaimer')) {
-            const d = document.createElement('div');
-            d.className = 'portfolio-legal-disclaimer';
-            d.style.cssText = 'width:100%;max-width:1120px;margin:40px auto 20px auto;padding:0 20px 20px 20px;font-size:12px;line-height:1.65;color:#8a8f98;text-align:center;font-style:italic;font-family:Inter,system-ui,-apple-system,sans-serif;box-sizing:border-box;flex:none;';
-            d.textContent = disclaimerText;
-            footerTarget.appendChild(d);
         }
     }
 
