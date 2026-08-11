@@ -40,6 +40,17 @@
                 moreContainer.appendChild(d);
             }
         }
+        // Enforce black text and high-contrast pill styling on cards
+        if (!document.getElementById('card-dark-text-styles')) {
+            const st = document.createElement('style');
+            st.id = 'card-dark-text-styles';
+            st.textContent = `
+                .framer-cl9am2 p, .framer-cl9am2 .framer-text, .framer-1vjdomc-container .framer-cl9am2 p, .framer-efu2pv-container .framer-cl9am2 p { color: #111111 !important; --extracted-r6o4lv: #111111 !important; --framer-text-color: #111111 !important; }
+                .framer-cymuuz p, .framer-cymuuz .framer-text, .framer-1jic7ed p, .framer-1sgsemi-container p, .framer-apcjru-container p { color: #111111 !important; --extracted-r6o4lv: #111111 !important; --framer-text-color: #111111 !important; font-weight: 500 !important; }
+                .framer-1jic7ed .framer-Epfay, .framer-1sgsemi-container .framer-Epfay, .framer-apcjru-container .framer-Epfay { --border-color: rgba(0, 0, 0, 0.18) !important; border-color: rgba(0, 0, 0, 0.18) !important; background-color: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; }
+            `;
+            (document.head || document.documentElement).appendChild(st);
+        }
     }
 
     if (typeof window !== 'undefined') {
