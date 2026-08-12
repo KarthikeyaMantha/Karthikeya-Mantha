@@ -40,6 +40,39 @@
                 moreContainer.appendChild(d);
             }
         }
+        
+        // Inject Medium link into Footer Connect section
+        const allLinks = Array.from(document.querySelectorAll('a'));
+        const xLink = allLinks.find(a => {
+            const h = (a.getAttribute('href') || '').toLowerCase();
+            const t = (a.textContent || '').trim();
+            return h.includes('x.com') || h.includes('twitter') || t === 'X (Twitter)' || t === 'Twitter';
+        });
+        if (xLink) {
+            const container = xLink.closest('.framer-1t32iwb') || xLink.closest('[data-framer-name="Link Wrapper"]') || xLink.parentElement?.parentElement;
+            if (container && !container.querySelector('.medium-footer-link')) {
+                // Find direct child of container that holds xLink
+                let directChild = xLink;
+                while (directChild && directChild.parentElement && directChild.parentElement !== container) {
+                    directChild = directChild.parentElement;
+                }
+                if (directChild && directChild.parentElement === container) {
+                    const clone = directChild.cloneNode(true);
+                    clone.classList.add('medium-footer-link');
+                    clone.removeAttribute('data-framer-node-id');
+                    const cloneA = clone.querySelector('a') || (clone.tagName === 'A' ? clone : null);
+                    if (cloneA) {
+                        cloneA.href = 'https://medium.com/@karthikeyamantha05';
+                        cloneA.target = '_blank';
+                        cloneA.rel = 'noopener';
+                        // Update innermost text element to preserve styles
+                        const textElem = cloneA.querySelector('p, span') || cloneA;
+                        textElem.textContent = 'Medium';
+                        container.appendChild(clone);
+                    }
+                }
+            }
+        }
         // Enforce black text and high-contrast pill styling on cards
         if (!document.getElementById('card-dark-text-styles')) {
             const st = document.createElement('style');
